@@ -38,11 +38,61 @@ body::-webkit-scrollbar {
     --bgLight: radial-gradient(var(--bg), transparent, var(--purple) 130%);
     --gray: grey;
     --comment: #555;
+    --honey: #FFB200;
+    --leaf: #3CCF4E;
+    --blood: #D61C4E;
+    --ocean: #00D7FF;
+}
+
+.app {
+    display: none;
+}
+
+.btn {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: var(--light);
+    border: 2px solid var(--light);
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+    cursor: pointer;
+    margin-top: 0.1;
+}
+
+.btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--purple);
+    transition: all .35s;
+}
+
+.btn:hover {
+    color: var(--light);
+}
+
+.btn:hover:after {
+    width: 100%;
 }
 
 .anniv {
     height: 100vh;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -52,19 +102,7 @@ body::-webkit-scrollbar {
     color: var(--light);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-}
-
-button {
-    background: none;
-    border: 2px solid;
-    font: inherit;
-    line-height: 1;
-    margin: 0.5em;
-    padding: 1em 2em;
-}
-
-.app {
-    display: none;
+    text-align: center;
 }
 
 .title {
@@ -75,15 +113,50 @@ button {
 }
 
 .content {
-    width: 50%;
-    margin-bottom: 15%;
+    width: 65%;
     margin-right: 10%;
     color: var(--light);
+    transition: 0.7s;
 }
 
 .content h1 {
     font-weight: 600;
     font-size: 2rem;
+}
+
+.extra {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    padding-left: 4%;
+    font-size: 1rem;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.extra p {
+    margin: 3px;
+}
+
+.comment {
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.class {
+    color: var(--honey) !important;
+}
+
+.important {
+    color: var(--leaf) !important;
+}
+
+.warning {
+    color: var(--blood) !important;
+}
+
+.info {
+    color: var(--ocean) !important;
 }
 
 .content h1 span {
@@ -93,6 +166,7 @@ button {
 .countdown {
     display: flex;
     height: 100vh;
+    width: 100vw;
     align-items: center;
     justify-content: center;
 }
@@ -116,13 +190,18 @@ ul {
     padding: 0;
 }
 
+#headline {
+    font-size: 2rem;
+    text-align: center;
+}
+
 #headline span {
     color: var(--purple);
 }
 
 li {
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1rem;
     list-style-type: none;
     padding: 1em;
     text-transform: uppercase;
@@ -131,7 +210,7 @@ li {
 
 li span {
     display: block;
-    font-size: 4.5rem;
+    font-size: 2rem;
 }
 
 .ghost {
@@ -153,9 +232,9 @@ li span {
     animation: shrink 3s ease-out infinite;
     transform-origin: center center;
 
-    ellipse {
+    /* ellipse {
         transform-origin: center center;
-    }
+    } */
 }
 
 @keyframes shrink {
@@ -173,4 +252,35 @@ li span {
         width: 90%;
         margin: 0 5%;
     }
+}
+
+
+.pop-1, .pop-2, .pop-3, .pop-4, .pop-5, .pop-6, .pop-7, .pop-8 {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.if-else {
+    display: flex;
+    flex-direction: column;
+}
+
+.extra-if {
+    padding: 2%;
+    padding-left: 4%;
+}
+
+h2 {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 18px;
 }
