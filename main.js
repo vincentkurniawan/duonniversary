@@ -13,11 +13,6 @@
         nextYear = yyyy + 1,
         dayMonth = "08/18/ 10:00",
         birthday = dayMonth + yyyy;
-
-    today = mm + "/" + dd + "/" + yyyy;
-    // if (today > birthday) {
-    //     birthday = dayMonth + nextYear;
-    // }
     //end
 
     const countDown = new Date(birthday).getTime(),
